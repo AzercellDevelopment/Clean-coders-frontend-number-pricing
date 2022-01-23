@@ -3,11 +3,10 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import { Layout } from "../commons";
-
+import { AiOutlineCheck, AiOutlineCheckCircle } from "react-icons/ai";
+import { MdOutlineDoDisturbOn } from "react-icons/md";
 export const AdminPanel = () => {
   useEffect(() => {
-    // console.log(id);
-
     console.log();
     // axios
     //   .post("", { id: id })
@@ -22,32 +21,66 @@ export const AdminPanel = () => {
           <ul>
             <li>Nömrələr</li>
             <li>Qiyməti</li>
-            <li>Satış</li>
-            <li>Alış</li>
+            <li>Satılıb</li>
+            <li>Bron olunub</li>
             <li>Vaxt</li>
           </ul>
         </div>
         <div className="body">
           <ul>
-            <li>8ew9rt</li>
+            <li>+994502017983</li>
             <li>24AZN</li>
-            <li>false</li>
-            <li>true</li>
-            <li>time</li>
+            <li>
+              <AiOutlineCheck />
+            </li>
+            <li>
+              <MdOutlineDoDisturbOn />
+            </li>
+            <li>11.03.2022</li>
           </ul>
           <ul>
-            <li>8ew9rt</li>
-            <li>24AZN</li>
-            <li>false</li>
-            <li>true</li>
-            <li>time</li>
+            <li>+994502017987</li>
+            <li>21AZN</li>
+            <li>
+              <MdOutlineDoDisturbOn />
+            </li>
+            <li>
+              <AiOutlineCheck />
+            </li>
+            <li>11.03.2022</li>
           </ul>
           <ul>
-            <li>8ew9rt</li>
-            <li>24AZN</li>
-            <li>false</li>
-            <li>true</li>
-            <li>time</li>
+            <li>+994502347980</li>
+            <li>45AZN</li>
+            <li>
+              <AiOutlineCheck />
+            </li>
+            <li>
+              <MdOutlineDoDisturbOn />
+            </li>
+            <li>11.03.2022</li>
+          </ul>
+          <ul>
+            <li>+994502017987</li>
+            <li>21AZN</li>
+            <li>
+              <AiOutlineCheck />
+            </li>
+            <li>
+              <MdOutlineDoDisturbOn />
+            </li>
+            <li>11.03.2022</li>
+          </ul>{" "}
+          <ul>
+            <li>+994502347980</li>
+            <li>45AZN</li>
+            <li>
+              <AiOutlineCheck />
+            </li>
+            <li>
+              <MdOutlineDoDisturbOn />
+            </li>
+            <li>11.03.2022</li>
           </ul>
         </div>
       </Container>

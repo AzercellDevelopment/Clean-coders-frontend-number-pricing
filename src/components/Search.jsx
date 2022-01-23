@@ -3,75 +3,50 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 export const Search = () => {
-  // handleChange = (e) => {
-  //     const {  value, name } = e.target;
-  //     const [fieldName, fieldIndex] = name.split("-");
-
-  //     let fieldIntIndex = parseInt(fieldIndex, 10);
-
-  //       // It should not be last input field
-  //       if (fieldIntIndex < 3) {
-
-  //         // Get the next input field using it's name
-  //         const nextfield = document.querySelector(
-  //           `input[name=field-${fieldIntIndex + 1}]`
-  //         );
-
-  //         // If found, focus the next field
-  //         if (nextfield !== null) {
-  //           nextfield.focus();
-
-  //       }
-  //     }}
-
-  let number = '';
-  const [prefix, setPrefix] = useState('_');
+  let number = "";
+  const [prefix, setPrefix] = useState("_");
   const [numbers, setNumbers] = useState({
-    // { id: 0,num: "_" },
-    // { id: 1,num: "_" },
-    // { id: 2,num: "_" },
-    // { id: 3,num: "_" },
-    // { id: 4,num: "_" },
-    // { id: 5,num: "_" },
-    // { id: 6,num: "_" },
-    "0": "_",
-    "1": "_",
-    "2": "_",
-    "3": "_",
-    "4": "_",
-    "5": "_",
-    "6": "_",
+    0: "_",
+    1: "_",
+    2: "_",
+    3: "_",
+    4: "_",
+    5: "_",
+    6: "_",
   });
 
   const onSelect = (val) => {
     setPrefix(val);
-  }
+  };
 
   const updateValue = (evt, ind) => {
-    setNumbers({...numbers, [ind]: evt});
+    setNumbers({ ...numbers, [ind]: evt });
   };
 
   useEffect(() => {
-    number = '';
+    number = "";
     for (let num in numbers) {
       number += numbers[num];
     }
     number = prefix + number;
-    console.log(number)
+    console.log(number);
   }, [numbers, prefix]);
 
   const onSearch = (e) => {
-    // console.log(numbers);
     console.log(e.target.value);
     console.log(this.numbers.values);
-    
   };
   return (
     <Container>
       <h2>Axtar</h2>
       <div>
         <div className="">
-          <select className="preNums" name="" id="" onChange={ev => onSelect(ev.target.value)}>
+          <select
+            className="preNums"
+            name=""
+            id=""
+            onChange={(ev) => onSelect(ev.target.value)}
+          >
             <option> Hamısı&hellip;</option>
             <option>050</option>
             <option>051</option>
@@ -110,9 +85,8 @@ const Container = styled.div`
     align-items: center;
     justify-content: space-around;
     @media only screen and (max-width: 768px) {
-  display: block;
-  
-  }
+      display: block;
+    }
   }
   .preNums,
   .inputs {
@@ -124,19 +98,18 @@ const Container = styled.div`
     border-radius: 5px;
     cursor: pointer;
     @media only screen and (max-width: 768px) {
-    /* padding: 5px; */
-    width: 30%;
-    margin: 10px auto;
-  }
+      width: 30%;
+      margin: 10px auto;
+    }
   }
   .preNums {
     border: none;
     width: 10%;
     font-size: 18px;
     @media only screen and (max-width: 768px) {
-   padding: 20px;
-   width: 50%;
-  }
+      padding: 20px;
+      width: 50%;
+    }
   }
   option {
   }
@@ -145,8 +118,8 @@ const Container = styled.div`
 
     font-size: 18px;
     @media only screen and (max-width: 768px) {
-    width: 40%;
-  }
+      width: 40%;
+    }
   }
   .inputs input {
     width: 100%;
@@ -170,8 +143,8 @@ const Container = styled.div`
       background-color: #750550;
     }
     @media only screen and (max-width: 768px) {
-    width: 50%;
-    margin: 15px auto;
-  }
+      width: 50%;
+      margin: 15px auto;
+    }
   }
 `;

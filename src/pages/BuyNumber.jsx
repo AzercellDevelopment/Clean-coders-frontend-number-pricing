@@ -6,9 +6,10 @@ import { Layout } from "../commons";
 import { BuyNow, Information } from "../components";
 
 export const BuyNumber = () => {
-  //    const data=this.props.readyNums;
-  //    console.log(data);
-  // console.log(this.props.numberForBuy);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumberId, setPhoneNumberId] = useState("");
+  const [pin, setPin] = useState("");
 
   const [isShown, setShown] = useState(false);
   const { id } = useParams();
@@ -21,7 +22,7 @@ export const BuyNumber = () => {
   useEffect(() => {
     console.log(id);
     // axios
-    //   .post("", { id: id })
+    //   .post("http://localhost:8080/hackathon/customer/brone", { id: id })
     //   .then((res) => JSON(res))
     //   .then((res) => console.log(res))
     //   .catch((err) => console.log(err));
@@ -33,18 +34,18 @@ export const BuyNumber = () => {
         <div className="numberField">
           <h3>+994502017983</h3>
 
-         
-          <BuyThisNumber onClick={handleInfo} className="greenBck">Ətraflı Məlumat</BuyThisNumber>
+          <BuyThisNumber onClick={handleInfo} className="greenBck">
+            Ətraflı Məlumat
+          </BuyThisNumber>
           <BuyThisNumber onClick={handleBuy}>Dərhal satın al</BuyThisNumber>
           <div className="price">35AZN</div>
-       
         </div>
         {isShown ? (
           <div className="centered">
             <BuyNow />{" "}
           </div>
         ) : (
-          <Information/>
+          <Information />
         )}
       </Container>
     </Layout>
@@ -76,12 +77,11 @@ const Container = styled.div`
     border-radius: 5px;
     padding: 20px;
 
-    @media only screen and (max-width:768px){
-   
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-}
+    @media only screen and (max-width: 768px) {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+    }
   }
 
   .price {
@@ -98,10 +98,10 @@ const Container = styled.div`
       -moz-box-shadow: 1px 1px 5px 1px rgba(179, 179, 179, 1);
       box-shadow: 1px 1px 5px 1px rgba(179, 179, 179, 1);
     }
-    @media only screen and (max-width:768px){
-    width: 60%;
-    margin: 10px auto;
-}
+    @media only screen and (max-width: 768px) {
+      width: 60%;
+      margin: 10px auto;
+    }
   }
   .greenBck {
     background-color: #96ceb4;
@@ -125,6 +125,7 @@ const BuyThisNumber = styled.button`
     box-shadow: 1px 1px 5px 1px rgba(179, 179, 179, 1);
   }
 
-  @media only screen and (max-width:768px){
+  @media only screen and (max-width: 768px) {
     width: 60%;
-}`;
+  }
+`;

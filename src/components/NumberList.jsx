@@ -94,12 +94,12 @@ const Container = styled.div`
     border-radius: 5px;
     width: 95%;
     cursor: pointer;
-    
+
     &:hover {
       -webkit-box-shadow: 1px 1px 5px 5px rgba(211, 211, 211, 0.45);
       box-shadow: 1px 1px 5px 5px #8f8e8e6d;
     }
-    @media only screen and (max-width:768px) {
+    @media only screen and (max-width: 768px) {
       width: 90%;
     }
   }

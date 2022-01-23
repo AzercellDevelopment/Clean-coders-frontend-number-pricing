@@ -13,7 +13,6 @@ function App() {
           <Route exact path="/" element={<HomePage />} />
           <Route exact path="/buy/:id" element={<BuyNumber />} />
           <Route exact path="/admin" element={<AdminPanel />} />
-
         </Routes>
       </BrowserRouter>
     </div>

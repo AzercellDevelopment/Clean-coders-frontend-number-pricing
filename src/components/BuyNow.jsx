@@ -10,7 +10,7 @@ export const BuyNow = () => {
 
   const [card, setCard] = useState(false);
   const handleCardPayment = () => {
-    setCard((val)=>!val);
+    setCard((val) => !val);
   };
   return (
     <Container>
@@ -21,17 +21,24 @@ export const BuyNow = () => {
           <input type="email" required placeholder="E-mail addressiniz..." />
           <input type="text" required placeholder="Fin kod..." />
 
-          <select
-            onChange={handleCardPayment}
-            required
-            name=""
-            id=""
-          >
+          <select onChange={handleCardPayment} required name="" id="">
             <option value="">Ödəniş növü</option>
-            <option  value="">Master Card</option>
+            <option value="">Master Card</option>
             <option value="">Nəğd ödəniş</option>
           </select>
-          {!card ? <h1>card</h1> : <h1>nagd</h1>}
+          {card ? (
+            <div className="cardField">
+              <p>Cartla ödəniş üçün məlumatları doldurun...</p>
+              <input type="number" placeholder="Cart nömrəsi" />
+              <div>
+                <input type="number" placeholder="ay/il" />
+                <input type="text" placeholder="CVC" />
+              </div>
+              <button className="payBtn">Ödə</button>
+            </div>
+          ) : (
+            <p>Nağd ödəniş üçün göstərilən addresə yaxınlaşa bilərsiniz</p>
+          )}
           <button className="submitForm" type="submit">
             Satın Al
           </button>
@@ -122,7 +129,6 @@ const Container = styled.div`
     margin: 10px auto;
     padding: 15px;
     border-radius: 5px;
-    /* background-color: #F5F5F5; */
   }
   .cardField > input {
     width: 90%;
@@ -137,7 +143,6 @@ const Container = styled.div`
     background-color: #f5f5f5;
   }
   .payBtn {
-    /* background-color: #980f5a; */
     color: white;
     background-color: #4fbdba;
     padding: 10px;
@@ -149,11 +154,3 @@ const Container = styled.div`
     float: right;
   }
 `;
-//  <div className="cardField">
-//    <p>Cartla ödəniş üçün  məlumatları doldurun...</p>
-//    <input type="number" placeholder="Cart nömrəsi" />
-//   <div>
-//    <input type="number" placeholder="ay/il" />
-//    <input type="text" placeholder="CVC" /></div>
-//    <button className="payBtn">Ödə</button>
-//  </div>

@@ -11,7 +11,6 @@ const Container = styled.div`
   background-color: #bebebe31;
   padding: 12px;
   font-size: 16px;
-  /* width: 100%; */
   text-align: left;
   margin-bottom: 20px;
   margin-top: -20px;
